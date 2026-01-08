@@ -1,11 +1,11 @@
 import { useState, useMemo } from "react";
-import { Search, Trash2, ArrowDown, ArrowUp, X, Info } from "lucide-react";
+import { Search, Trash2, X } from "lucide-react"; // <--- REMOVED Unused Imports
 import { invoke } from "@tauri-apps/api/core";
 
 export default function ProcessList({ processes, toMB }: any) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortConfig, setSortConfig] = useState<{ key: string; direction: 'asc' | 'desc' }>({ key: 'cpu', direction: 'desc' });
-  const [selectedProcess, setSelectedProcess] = useState<any>(null); // For Modal
+  const [selectedProcess, setSelectedProcess] = useState<any>(null);
 
   const handleSort = (key: string) => {
     let direction: 'asc' | 'desc' = 'desc';
