@@ -1,0 +1,56 @@
+.titlebar {
+    height: 32px;
+    background: transparent; /* Let the glass shine through */
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Always on top */
+    padding-left: 15px; /* Space for logo */
+}
+
+/* IMPORTANT: This makes the window draggable */
+.titlebar-branding {
+    pointer-events: none; /* Let clicks pass through to drag region */
+}
+
+.title-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.titlebar-controls {
+    display: flex;
+    height: 100%;
+}
+
+.titlebar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    color: #ccc;
+    cursor: default;
+    transition: background 0.2s;
+}
+
+.titlebar-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* The red close button style */
+.titlebar-btn.close-btn:hover {
+    background: #e81123; /* Windows Native Red */
+    color: white;
+}
+
